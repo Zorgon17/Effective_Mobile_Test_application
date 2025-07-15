@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/input_field_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#151515"
+    android:paddingTop="16dp">
+
+    <!-- Метка (Label) -->
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal"
+        android:layout_gravity="start" />
+
+    <!-- Поле ввода -->
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_rounded"
+        android:hint="@string/hint"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF" />
+</LinearLayout>

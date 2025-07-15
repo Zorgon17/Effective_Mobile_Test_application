@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnOk" type="id" />
+    <item name="text_view_forgot_password" type="id" />
+    <item name="text_view_registration" type="id" />
+    <item name="text_view_havent_got_an_account" type="id" />
+</resources>

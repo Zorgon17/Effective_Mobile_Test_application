@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#151515">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#151515"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:fitsSystemWindows="false">
+
+        <!-- ВХОД -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="start"
+            android:text="@string/enter"
+            android:textColor="#F2F2F3"
+            android:textSize="28sp"
+            android:textStyle="normal" />
+
+        <!-- Первое поле ввода -->
+        <include
+            android:id="@+id/emailField"
+            layout="@layout/input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Второе поле ввода -->
+        <include
+            android:id="@+id/passwordField"
+            layout="@layout/input_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Кнопка входа -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEnter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:text="@string/enter"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_rounded_selector" />
+
+        <!-- Буковки -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/text_view_havent_got_an_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing="0.04"
+                android:text="@string/havent_got_an_account"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_view_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.04"
+                android:lineSpacingMultiplier="1.25"
+                android:text="@string/registration"
+                android:textColor="#12B956"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.04"
+            android:lineSpacingMultiplier="1.25"
+            android:text="@string/forgot_password"
+            android:textColor="#12B956"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <!-- devider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#444444" />
+
+        <!-- ВК и ОК -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:weightSum="2">
+
+            <ImageButton
+                android:id="@+id/btnVk"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_vk_button"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_vk"
+                app:tint="#FFFFFF" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="0dp" />
+
+            <ImageButton
+                android:id="@+id/btnOk"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_ok_button"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_ok"
+                app:tint="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
