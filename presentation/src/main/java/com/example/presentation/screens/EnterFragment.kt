@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 
 class EnterFragment : Fragment() {
 
+
     private var _binding: FragmentEnterScreenBinding? = null
     private val binding get() = _binding!!
 
