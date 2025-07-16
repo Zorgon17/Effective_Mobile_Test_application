@@ -1,0 +1,129 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_course_item_rounded"
+    android:layout_margin="8dp"
+    android:clipToOutline="true"
+    android:backgroundTintMode="src_in"
+    android:elevation="4dp">
+
+    <!-- Верхнее изображение -->
+    <ImageView
+        android:id="@+id/headerImageView"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover"
+        android:background="@drawable/bg_image_rounded"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Закладка -->
+    <ImageView
+        android:id="@+id/bookmarkView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bookmark"
+        android:background="@drawable/bg_bookmark_rounded"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/headerImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Рейтинг -->
+    <TextView
+        android:id="@+id/ratingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star"
+        android:drawablePadding="4dp"
+        android:text="4.9"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_bluer"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/headerImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp" />
+
+    <!-- Дата -->
+    <TextView
+        android:id="@+id/dateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22 Мая 2024"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_bluer"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintTop_toTopOf="@id/ratingView"
+        app:layout_constraintStart_toEndOf="@id/ratingView"
+        android:layout_marginStart="8dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/headerImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Название курса -->
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Java-разработчик с нуля"
+            android:textSize="18sp"
+            android:textColor="#F2F2F3"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Описание -->
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Освойте backend-разработку и программирование на Java, фреймворки..."
+            android:textColor="#BBBBBB"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/titleView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp" />
+
+        <!-- Цена -->
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999 ₽"
+            android:textColor="#F2F2F3"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/descriptionView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp" />
+
+        <!-- Подробнее -->
+        <TextView
+            android:id="@+id/learnMoreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Подробнее ➝"
+            android:textColor="#12B956"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/priceView"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

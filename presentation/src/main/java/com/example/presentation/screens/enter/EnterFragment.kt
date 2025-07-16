@@ -1,24 +1,24 @@
-package com.example.presentation.screens
+package com.example.presentation.screens.enter
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import com.example.presentation.databinding.FragmentEnterScreenBinding
-import com.example.presentation.viewmodels.EnterScreenViewModel
-import com.example.presentation.R
 import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.Navigation
+import com.example.presentation.R
+import com.example.presentation.databinding.FragmentEnterScreenBinding
+import com.example.presentation.viewmodels.EnterScreenViewModel
 import kotlinx.coroutines.launch
 
 class EnterFragment : Fragment() {
-
 
     private var _binding: FragmentEnterScreenBinding? = null
     private val binding get() = _binding!!
@@ -77,7 +77,7 @@ class EnterFragment : Fragment() {
         }
 
         binding.btnEnter.setOnClickListener {
-
+            Navigation.findNavController(view).navigate(R.id.action_enter_to_main)
         }
         binding.btnVk.setOnClickListener {
             viewModel.onVkButtonClick()

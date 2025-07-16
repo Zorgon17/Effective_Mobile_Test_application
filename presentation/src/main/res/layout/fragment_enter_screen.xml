@@ -120,6 +120,7 @@
             android:padding="16dp"
             android:weightSum="2">
 
+            <!-- ВК -->
             <ImageButton
                 android:id="@+id/btnVk"
                 android:layout_width="0dp"
@@ -135,6 +136,7 @@
                 android:layout_width="8dp"
                 android:layout_height="0dp" />
 
+            <!-- ОК -->
             <ImageButton
                 android:id="@+id/btnOk"
                 android:layout_width="0dp"
