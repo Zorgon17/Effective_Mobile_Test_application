@@ -10,4 +10,7 @@
     <string name="password">Пароль</string>
     <string name="hint_email">example@gmail.com</string>
     <string name="enter_a_password">Введите пароль</string>
+    <string name="search_courses">Search courses...</string>
+    <string name="filter">Filter</string>
+    <string name="filter_for_date">По дате добавления</string>
 </resources>

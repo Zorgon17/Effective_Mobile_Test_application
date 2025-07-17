@@ -1,13 +1,14 @@
 package com.example.presentation.screens.main
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.presentation.R
 import com.example.presentation.databinding.CourseItemBinding
-import com.example.presentation.models.Course
+import com.example.presentation.uiModels.UiCourse
 
-class MainScreenCourseAdapter(private val courses: List<Course>) :
+class MainScreenCourseAdapter(private var courses: List<UiCourse>) :
     RecyclerView.Adapter<MainScreenCourseAdapter.CourseViewHolder>() {
 
     inner class CourseViewHolder(val binding: CourseItemBinding) :
@@ -26,7 +27,7 @@ class MainScreenCourseAdapter(private val courses: List<Course>) :
             titleView.text = course.title
             descriptionView.text = course.text
             priceView.text = course.price
-            ratingView.text = course.rate.toString()
+            ratingView.text = course.rate
             dateView.text = course.startDate
 
             val bookmarkRes = if (course.hasLike) {
@@ -42,5 +43,10 @@ class MainScreenCourseAdapter(private val courses: List<Course>) :
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(newCourses: List<UiCourse>) {
+        courses = newCourses
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int = courses.size
 }

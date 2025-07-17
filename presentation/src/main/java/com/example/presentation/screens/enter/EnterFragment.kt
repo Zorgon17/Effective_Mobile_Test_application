@@ -12,12 +12,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.Navigation
 import com.example.presentation.R
 import com.example.presentation.databinding.FragmentEnterScreenBinding
 import com.example.presentation.viewmodels.EnterScreenViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import androidx.navigation.findNavController
 
+@AndroidEntryPoint
 class EnterFragment : Fragment() {
 
     private var _binding: FragmentEnterScreenBinding? = null
@@ -77,7 +79,7 @@ class EnterFragment : Fragment() {
         }
 
         binding.btnEnter.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_enter_to_main)
+            view.findNavController().navigate(R.id.action_enter_to_main)
         }
         binding.btnVk.setOnClickListener {
             viewModel.onVkButtonClick()

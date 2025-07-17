@@ -2,7 +2,9 @@ package com.example.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.regex.Pattern
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -14,7 +16,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class EnterScreenViewModel : ViewModel() {
+@HiltViewModel
+class EnterScreenViewModel@Inject constructor() : ViewModel() {
 
     private val _openUrlEvent = MutableSharedFlow<String>()
     val openUrlEvent = _openUrlEvent.asSharedFlow()
@@ -28,7 +31,7 @@ class EnterScreenViewModel : ViewModel() {
     /**
      * EMAIL И PASSWORD
      */
-    // Маска email: простой regex (текст@текст.текст), кириллица не разрешена
+
     private val emailRegex = Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
 
     val isEmailValid: StateFlow<Boolean> = email.map { email ->
