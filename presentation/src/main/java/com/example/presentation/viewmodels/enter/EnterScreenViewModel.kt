@@ -1,4 +1,4 @@
-package com.example.presentation.viewmodels
+package com.example.presentation.viewmodels.enter
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -36,11 +36,11 @@ class EnterScreenViewModel@Inject constructor() : ViewModel() {
 
     val isEmailValid: StateFlow<Boolean> = email.map { email ->
         emailRegex.matcher(email).matches()
-    }.stateIn(viewModelScope, SharingStarted.Eagerly, false)
+    }.stateIn(viewModelScope, SharingStarted.Companion.Eagerly, false)
 
     val isFormValid: StateFlow<Boolean> = combine(isEmailValid, password) { emailValid, pass ->
         emailValid && pass.isNotEmpty()
-    }.stateIn(viewModelScope, SharingStarted.Eagerly, false)
+    }.stateIn(viewModelScope, SharingStarted.Companion.Eagerly, false)
 
     fun onEmailChanged(newEmail: String): String {
         val filtered = newEmail.filter { it.code < 128 }

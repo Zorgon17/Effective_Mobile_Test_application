@@ -1,12 +1,14 @@
-package com.example.presentation.viewmodels
+package com.example.presentation.viewmodels.main
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.presentation.mappers.toUi
 import com.example.domain.usecase.GetCoursesUseCase
+import com.example.presentation.mappers.toUi
 import com.example.presentation.uiModels.UiCourse
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,14 +27,11 @@ private val getCoursesUseCase: GetCoursesUseCase
     val error: StateFlow<String?> = _error
 
     init {
-        Log.d("ApiServiceRepo", "ViewModel created")
         loadCourses()
     }
 
     private fun loadCourses() {
-        Log.d("ApiServiceRepo", "loadCourses called")
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("MainScreenViewModel", "Coroutine started")
             try {
                 val result = getCoursesUseCase()
                 _courses.value = result.map { it.toUi() }
@@ -41,4 +40,17 @@ private val getCoursesUseCase: GetCoursesUseCase
             }
         }
     }
+
+    fun sortByDate() {
+        val formatter = SimpleDateFormat("dd MMMM yyyy", Locale.forLanguageTag("ru"))
+
+        _courses.value = _courses.value.sortedBy { course ->
+            try {
+                formatter.parse(course.startDate) ?: Date(0)
+            } catch (e: Exception) {
+                Date(0)
+            }
+        }
+    }
+
 }

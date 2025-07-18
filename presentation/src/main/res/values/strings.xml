@@ -13,4 +13,9 @@
     <string name="search_courses">Search courses...</string>
     <string name="filter">Filter</string>
     <string name="filter_for_date">По дате добавления</string>
+    <string name="java">Java-разработчик с нуля</string>
+    <string name="backend_java">Освойте backend-разработку и программирование на Java, фреймворки...</string>
+    <string name="_999">999 ₽</string>
+    <string name="_22_2024">22 Мая 2024</string>
+    <string name="_4_9">4.9</string>
 </resources>

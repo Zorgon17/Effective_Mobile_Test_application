@@ -14,7 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.presentation.R
 import com.example.presentation.databinding.FragmentEnterScreenBinding
-import com.example.presentation.viewmodels.EnterScreenViewModel
+import com.example.presentation.viewmodels.enter.EnterScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import androidx.navigation.findNavController

@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.presentation.databinding.FragmentMainScreenBinding
-import com.example.presentation.viewmodels.MainScreenViewModel
+import com.example.presentation.viewmodels.main.MainScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -34,6 +34,10 @@ class MainScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.sortLabelView.setOnClickListener{
+            viewModel.sortByDate()
+        }
 
         adapter = MainScreenCourseAdapter(emptyList())
         binding.courseListView.adapter = adapter
